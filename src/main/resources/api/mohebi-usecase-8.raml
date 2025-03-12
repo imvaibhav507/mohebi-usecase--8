@@ -1,0 +1,26 @@
+#%RAML 1.0
+title: mohebi-usecase-8
+version: v1
+
+securitySchemes:
+  OAuth2.0: !include security-scheme/securityScheme.raml
+
+securedBy:
+  - OAuth2.0
+
+/fetch-record:
+  post:
+    body:
+      application/json:
+        example: {
+                    "delivery_number": 897211861
+                  }
+    responses:
+      200:
+        body:
+          application/json:
+            example: {
+                        "message": "PDF generated successfully"
+                      }              
+          
+    
